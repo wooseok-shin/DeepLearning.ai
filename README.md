@@ -1,4 +1,5 @@
 ﻿# Coursera DeepLearning.ai
-Coursera Andrew Ng 교수님의 Deep Learning Specialization 강의 정리 Repository
+Coursera Deep Learning Specialization(by Andrew Ng) 강의 정리
 
-## Course 1. [Neural Networks and Deep Learning]
+
+## Course 1. Neural Networks and Deep Learning
