@@ -7,7 +7,8 @@
 - 따라서 시그모이드 함수로 0과 1사이의 값으로 변환  
 - ![yhat=시그모이드(hypothesis)](https://user-images.githubusercontent.com/46666862/71360272-99af8c00-25d2-11ea-9f59-451077157652.gif)  
 
-- - 시그모이드 함수: ![sigmoid](https://user-images.githubusercontent.com/46666862/71360273-99af8c00-25d2-11ea-9c02-aee7b233e2f3.gif)
+- 시그모이드 함수: 
+                ![sigmoid](https://user-images.githubusercontent.com/46666862/71360273-99af8c00-25d2-11ea-9c02-aee7b233e2f3.gif)
 
 
 
