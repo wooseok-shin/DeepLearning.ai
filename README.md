@@ -1,4 +1,4 @@
 # Coursera DeepLearning.ai
-Coursera Andrew Ng ±³¼ö´ÔÀÇ Deep Learning Specialization °­ÀÇ Á¤¸® Repository
+Coursera Andrew Ng êµìˆ˜ë‹˜ì˜ Deep Learning Specialization ê°•ì˜ ì •ë¦¬ Repository
 
 ## Course 1. [Neural Networks and Deep Learning]
