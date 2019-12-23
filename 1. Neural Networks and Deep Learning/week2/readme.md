@@ -58,9 +58,9 @@
   2. backward step(역전파): 미분, 기울기 계산
 
 - forward step  
-	J(a,b,c) = 3(a+bc)의 계산 그래프
-		1. u = bc
-		2. v = a+u
+	J(a,b,c) = 3(a+bc)의 계산 그래프  
+		1. u = bc  
+		2. v = a+u  
 		3. J = 3v
 
 ![computation graph](https://user-images.githubusercontent.com/46666862/71361971-f95c6600-25d7-11ea-98e5-017157c67f59.png)
