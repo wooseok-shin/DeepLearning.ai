@@ -36,10 +36,10 @@
 - 이후 함수의 기울기를 따라서 최적의 값으로 한 스텝씩 업데이트
 - 알고리즘
 
---![w update](https://user-images.githubusercontent.com/46666862/71361454-5c4cfd80-25d6-11ea-9ac9-204c309a9075.gif)
---![b update](https://user-images.githubusercontent.com/46666862/71361453-5c4cfd80-25d6-11ea-9ae4-0296769b8f98.gif)
---![alpha](https://user-images.githubusercontent.com/46666862/71361520-8ef6f600-25d6-11ea-8665-43f5a4d7e664.gif) : Learning rate(학습률)이라고 하며, 얼만큼의 스텝으로 나아갈 것인지 정한다.
---![frac{dj}{dw}](https://user-images.githubusercontent.com/46666862/71361450-5bb46700-25d6-11ea-9a5b-579de3f26a2b.gif) : 미분을 통해 구한 값(도함수,기울기) / dw로 표기하기도 한다.
+	![w update](https://user-images.githubusercontent.com/46666862/71361454-5c4cfd80-25d6-11ea-9ac9-204c309a9075.gif)
+	![b update](https://user-images.githubusercontent.com/46666862/71361453-5c4cfd80-25d6-11ea-9ae4-0296769b8f98.gif)
+	![alpha](https://user-images.githubusercontent.com/46666862/71361520-8ef6f600-25d6-11ea-8665-43f5a4d7e664.gif) : Learning rate(학습률)이라고 하며, 얼만큼의 스텝으로 나아갈 것인지 정한다.
+	![frac{dj}{dw}](https://user-images.githubusercontent.com/46666862/71361450-5bb46700-25d6-11ea-9a5b-579de3f26a2b.gif) : 미분을 통해 구한 값(도함수,기울기) / dw로 표기하기도 한다.
   
 - 위의 미분을 통해 구한 값 dw>0이면, w는 기존의 w값 보다 작은 방향으로 업데이트, 만약 dw<0이면, w는 기존의 w값 보다 큰 방향으로 업데이트 되어감
 
