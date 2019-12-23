@@ -57,8 +57,8 @@
   1. forward step(순전파) : 신경망의 결과값 계산
   2. backward step(역전파): 미분, 기울기 계산
 
-- forward step
-	-- J(a,b,c) = 3(a+bc)의 계산 그래프
+- forward step  
+	J(a,b,c) = 3(a+bc)의 계산 그래프
 		1. u = bc
 		2. v = a+u
 		3. J = 3v
