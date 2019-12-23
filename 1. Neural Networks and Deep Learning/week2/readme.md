@@ -27,6 +27,7 @@
 - 위의 Cost Function을 최소화하는 w와 b를 찾는 것
 
 
+
 ## Gradient Descent(경사하강법)
 
 
@@ -36,16 +37,16 @@
 - 이후 함수의 기울기를 따라서 최적의 값으로 한 스텝씩 업데이트
 - 알고리즘
 
-	![w update](https://user-images.githubusercontent.com/46666862/71361454-5c4cfd80-25d6-11ea-9ac9-204c309a9075.gif)
-	![b update](https://user-images.githubusercontent.com/46666862/71361453-5c4cfd80-25d6-11ea-9ae4-0296769b8f98.gif)
-	![alpha](https://user-images.githubusercontent.com/46666862/71361520-8ef6f600-25d6-11ea-8665-43f5a4d7e664.gif) : Learning rate(학습률)이라고 하며, 얼만큼의 스텝으로 나아갈 것인지 정한다.
-	![frac{dj}{dw}](https://user-images.githubusercontent.com/46666862/71361450-5bb46700-25d6-11ea-9a5b-579de3f26a2b.gif) : 미분을 통해 구한 값(도함수,기울기) / dw로 표기하기도 한다.
+![w update](https://user-images.githubusercontent.com/46666862/71361454-5c4cfd80-25d6-11ea-9ac9-204c309a9075.gif)  
+![b update](https://user-images.githubusercontent.com/46666862/71361453-5c4cfd80-25d6-11ea-9ae4-0296769b8f98.gif)  
+![alpha](https://user-images.githubusercontent.com/46666862/71361520-8ef6f600-25d6-11ea-8665-43f5a4d7e664.gif) : Learning rate(학습률)이라고 하며, 얼만큼의 스텝으로 나아갈 것인지 정한다.  
+![frac{dj}{dw}](https://user-images.githubusercontent.com/46666862/71361450-5bb46700-25d6-11ea-9a5b-579de3f26a2b.gif) : 미분을 통해 구한 값(도함수,기울기) / dw로 표기하기도 한다.  
   
 - 위의 미분을 통해 구한 값 dw>0이면, w는 기존의 w값 보다 작은 방향으로 업데이트, 만약 dw<0이면, w는 기존의 w값 보다 큰 방향으로 업데이트 되어감
 
 - cf)
---![dw=frac{dj}{dw}](https://user-images.githubusercontent.com/46666862/71361451-5c4cfd80-25d6-11ea-82ad-14ce94488845.gif) : 함수의 기울기가 w 방향으로 얼만큼 변했는지 나타냄
-  --![db=frac{dj}{db}](https://user-images.githubusercontent.com/46666862/71361452-5c4cfd80-25d6-11ea-82f9-c562771a9f06.gif) : 함수의 기울기가 b 방향으로 얼만큼 변했는지 나타냄
+![dw=frac{dj}{dw}](https://user-images.githubusercontent.com/46666862/71361451-5c4cfd80-25d6-11ea-82ad-14ce94488845.gif) : 함수의 기울기가 w 방향으로 얼만큼 변했는지 나타냄  
+![db=frac{dj}{db}](https://user-images.githubusercontent.com/46666862/71361452-5c4cfd80-25d6-11ea-82f9-c562771a9f06.gif) : 함수의 기울기가 b 방향으로 얼만큼 변했는지 나타냄  
 
 
 ## Computation Graph(계산 그래프)
@@ -62,6 +63,7 @@
 		3. J = 3v
 
 ![computation graph](https://user-images.githubusercontent.com/46666862/71361971-f95c6600-25d7-11ea-98e5-017157c67f59.png)
+
 
 
 ## Computation Graph 미분
