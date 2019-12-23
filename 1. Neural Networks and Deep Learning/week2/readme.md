@@ -72,8 +72,43 @@
 
 - backward step
 
-a=5, b=3, c=2라고 가정하자. 그럼 위의 계산 그래프에서 J=33, v=11, u=6
+- a=5, b=3, c=2라고 가정하자. 그럼 위의 계산 그래프에서 J=33, v=11, u=6 이다.
 
-1. 
+1. 역전파의 첫 단계로 ![frac{dJ}{dv}](https://user-images.githubusercontent.com/46666862/71363384-49d5c280-25dc-11ea-8a93-6bfff4f477ff.gif) 를 직관적으로 구해보자  
+ J = 3v에서, v=11 --> v= 11.001로 변하면 J=33 --> J=33.003이 변한다.  
+ 기울기, 도함수는 v가 a만큼 바뀔 때, J는 몇 a만큼 바뀌는지라고 할 수 있다.   
+ 여기서 v가 0.001배 증가할 때 J는 0.003배가 증가하였다.  
+ 즉, 이는 J의 v에 대한 도함수, ![frac{dJ}{dv}](https://user-images.githubusercontent.com/46666862/71363384-49d5c280-25dc-11ea-8a93-6bfff4f477ff.gif) = 3이라고 할 수 있다.  
+cf) 엄밀하게 말하면 v가 0.001이 아닌 무한히 작은 수라고 해야하나 편의상 이렇게 0.001로 설명하였다.
+
+2. 한 단계 더 나아가서 ![frac{dJ}{da}](https://user-images.githubusercontent.com/46666862/71363383-49d5c280-25dc-11ea-8384-c62f6b2315e8.gif) 를 구해보자.  
+ a=5 --> a=5.001 로 바뀌면 v=11 --> v=11.001 이 된다. 그리고 J=33 --> 33.003으로 바뀌게 된다.  
+즉, a가 0.001배 커지면 v역시 0.001배 커지며, J는 0.003배가 커지게 된다.  
+위를 바탕으로 ![chainrule](https://user-images.githubusercontent.com/46666862/71363927-02e8cc80-25de-11ea-8b78-458af66cec6e.gif) 로 표현될 수 있고 이러한 법칙을 Chain Rule(연쇄법칙)이라고 한다.
+ 
+
+
+## Logistic Regression Gradient Descent
+
+- 앞 챕터를 토대로 로지스틱 회귀에 경사하강법을 적용해보자  
+![z=w tx+b](https://user-images.githubusercontent.com/46666862/71364576-fbc2be00-25df-11ea-9ab2-6f98eaf94db2.gif)  
+![hat{y} = sigma(z) = a](https://user-images.githubusercontent.com/46666862/71364575-fbc2be00-25df-11ea-8a62-7e2f7fe6029d.gif)  
+![L(a,y)](https://user-images.githubusercontent.com/46666862/71364574-fbc2be00-25df-11ea-99e5-e6c6ad2b63b6.gif)  
+
+- Backward  
+step1. ![dl da](https://user-images.githubusercontent.com/46666862/71365102-5b6d9900-25e1-11ea-9f6a-a1e82410ed67.gif)   
+step2. ![체인룰a-y](https://user-images.githubusercontent.com/46666862/71365099-5b6d9900-25e1-11ea-980a-2a25eaafdafd.gif)  
+step3. ![dw1](https://user-images.githubusercontent.com/46666862/71365392-2d3c8900-25e2-11ea-800f-fe4dd9e825d0.gif)  
+	   ![db](https://user-images.githubusercontent.com/46666862/71365391-2ca3f280-25e2-11ea-9b70-a660245beb04.gif)  
+	   
+위의 단계를 거쳐 최종적으로 w와 b를 업데이트 할 수 있다.  
+- ![LR_w update](https://user-images.githubusercontent.com/46666862/71365600-daaf9c80-25e2-11ea-8c36-16b712e4fa47.gif)  
+- ![LR_b update](https://user-images.githubusercontent.com/46666862/71365599-daaf9c80-25e2-11ea-8cb4-1c06341a2934.gif)
+
+
+
+
+
+
 
 
