@@ -56,7 +56,7 @@
 
 ![why acti](https://user-images.githubusercontent.com/46666862/71479250-df6c8e80-2836-11ea-9dee-14fcec4125f1.gif)
 
-- 앞서 z와 a의 값을 구한 식에 활성화 함수를 linear함수를 적용하였다.
+- 앞서 z와 a의 값을 구한 식에 활성화 함수로 linear함수를 적용하였다.
 - 위의 식에서 ![a 1](https://user-images.githubusercontent.com/46666862/71479309-25295700-2837-11ea-84ba-3bba55d048dc.gif) 을 ![a 2](https://user-images.githubusercontent.com/46666862/71479338-4c802400-2837-11ea-8a19-14c9d5b57bff.gif)
 에 대입하면 아래의 식을 얻을 수 있다.
 
@@ -82,4 +82,27 @@
 
 
 
+## Neural Network에서의 Gradient Descent
 
+
+![신경망구조](https://user-images.githubusercontent.com/46666862/71477954-6407de80-2830-11ea-9a5a-0d4131877e47.png)
+- 다음과 같은 은닉층이 1개인 신경망 구조에서 Gradient Descent를 구해볼 것이다.  
+
+
+i) Forward propagation(정방향 전파)
+
+![정방향](https://user-images.githubusercontent.com/46666862/71502382-3b74f880-28b3-11ea-8e05-10735e2053df.gif)
+
+- 먼저 Forward propagation은 위와같은 식으로 전개된다.  
+- cf) g는 Activation Function중 어떤것이든 될 수 있다. 여기선 Sigmoid로 설정하였다.
+
+
+
+
+ii) Backward propagation(역방향 전파)
+
+![역전파](https://user-images.githubusercontent.com/46666862/71502381-3b74f880-28b3-11ea-9288-f356082ad80c.gif)
+
+- 역전파의 미분은 위와같이 전개된다.   
+- cf) 표기를 간단하게 하기 위해서 dZ = dL/dZ, dW = dL/dW 등으로 표현하였다.  
+- cf) db의 경우 열을 맞춰주기 위하여 Numpy 라이브러리의 np.sum(axis=1)을 사용하였다.
