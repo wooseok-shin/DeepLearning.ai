@@ -106,3 +106,37 @@ ii) Backward propagation(역방향 전파)
 - 역전파의 미분은 위와같이 전개된다.   
 - cf) 표기를 간단하게 하기 위해서 dZ = dL/dZ, dW = dL/dW 등으로 표현하였다.  
 - cf) db의 경우 열을 맞춰주기 위하여 Numpy 라이브러리의 np.sum(axis=1)을 사용하였다.
+
+
+
+## Weight Random Initialization(가중치 초기화)
+
+- Logistic Regression과는 달리 Neural Network에서는 초기 가중치를 0으로 두면 학습이 되지 않는다.
+
+![multilayer-perceptron](https://user-images.githubusercontent.com/46666862/71544323-5a61b080-29c1-11ea-90dc-3142fd711830.png)
+
+- 위처럼 Input이 x1, x2이고, 은닉층의 node수가 3개일때,
+![W,b=0000](https://user-images.githubusercontent.com/46666862/71544408-7023a580-29c2-11ea-93f4-11b366113de9.gif) 라고 가정하자
+
+- 이 경우에 은닉층을 통과한 값은  ![a1 = a2](https://user-images.githubusercontent.com/46666862/71544412-70bc3c00-29c2-11ea-9348-7e196e1a7232.gif) 로 같은 값을 가지게 된다.  
+- 이는 결국 ![dz1 = dz2](https://user-images.githubusercontent.com/46666862/71544411-70bc3c00-29c2-11ea-9bf0-2a55e7075022.gif) 도 같은 값을 가지게 되는데  
+- 따라서, 두 hidden unit은 항상 똑같은 함수를 계산하게 된다.  
+
+그러면 ![dw = uv uv](https://user-images.githubusercontent.com/46666862/71544410-70bc3c00-29c2-11ea-943e-beccf823a18c.gif) 와 같이 dw는 같은 열을 가지게 되고 이는 출력 unit에 항상 같은 영향을 주게된다.  
+- 이는 hidden unit이 무수히 많아져도 사실상 하나의 hidden unit과 다름없게 된다.  
+- 따라서, 이를 방지하기 위해 W를 랜덤하게 초기화해주어야 한다.  
+- cf) b의 경우에는 W만 랜덤하게 초기화 시켜주면 0으로 초기화 해도 상관없다.  
+
+
+- 활성화함수로 Sigmoid나 tanh를 쓰는 경우에는 W를 랜덤하게 초기화 시킬때에도 0.01과 같은 작은 값을 곱해주는 것이 좋다.  
+- ![CodeCogsEqn](https://user-images.githubusercontent.com/46666862/71544500-a1e93c00-29c3-11ea-9681-7b68ad86ff5b.gif) 에서 W값이 커지면 Z값도 커지게 된다.  
+- 따라서 Sigmoid나 tanh같은 경우, W의 절대값이 많이 큰 경우에는 Gradient가 매우 작아지기 떄문에 학습이 제대로 되지 않을 수 있다.
+
+
+```python
+W1 = np.random.randn((3,2)) * 0.01
+b1 = np.zeros(3,1)
+W2 = np.random.randn((1,3)) * 0.01
+b2 = np.zeros(1,1)
+```
+
