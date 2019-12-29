@@ -14,7 +14,7 @@
 - m개 샘플에서의 Forward
   
   
-![m개샘플 ZA](https://user-images.githubusercontent.com/46666862/71554972-2b9f1500-2a69-11ea-8410-49bc8b5dd7a8.gif)
+	![m개샘플 ZA](https://user-images.githubusercontent.com/46666862/71554972-2b9f1500-2a69-11ea-8410-49bc8b5dd7a8.gif)  
 cf) 다른것들은 벡터화로 해결할 수 있으나 Z[1] --> Z[2] --> ... --> Z[L]을 구하는 것에는 for문을 사용할 수 밖에없다.
 
 
