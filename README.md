@@ -16,4 +16,14 @@ Week3: [Shallow Neural Networks](https://github.com/wooseok-shin/DeepLearning.ai
 * Neural network Representation and Vectorization
 * Activation Function(활성화 함수)
 * non-linear Activation Function를 사용하는 이유
-* Activation Function(활성화 함수) 미분
+* Activation Function(활성화 함수) 미분  
+* Weight Random Initialization(가중치 초기화)
+
+
+Week4: [Deep Neural Networks](https://github.com/wooseok-shin/DeepLearning.ai/tree/master/1.%20Neural%20Networks%20and%20Deep%20Learning/week4)
+* Forward Propagation  
+* Getting your Matrix dimension right  
+* Why deep Representations? (깊은 신경망이 더 많은 특징을 잡아내는 이유, 직관적으로)  
+* Parameters vs HyperParameters  
+* Forward and Backward propagation  
+

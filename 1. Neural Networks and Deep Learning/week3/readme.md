@@ -140,3 +140,10 @@ W2 = np.random.randn((1,3)) * 0.01
 b2 = np.zeros(1,1)
 ```
 
+```python
+# # 4개의 층, 그리고 각 층에서의 Node가 5, 3, 2, 1인 신경망에서 W,b 초기화
+layers = [5, 3, 2, 1]
+for i in range(1, len(layers)):
+	parameter['W', str(i)] = np.random.randn(layers[i], layers[i-1]) * 0.01
+	parameter['b', str(i)] = np.zeros(layers[i],1) * 0.01
+```
