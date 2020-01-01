@@ -1,3 +1,12 @@
+### 학습목표
+	- See deep neural networks as successive blocks put one after each other  
+	- Build and train a deep L-layer Neural Network  
+	- Analyze matrix and vector dimensions to check neural network implementations.  
+	- Understand how to use a cache to pass information from forward propagation to back propagation.  
+	- Understand the role of hyperparameters in deep learning  
+
+
+
 ## Forward Propagation
 
 ![다층신경망구조](https://user-images.githubusercontent.com/46666862/71554876-4f159000-2a68-11ea-8709-04a024094715.jpeg)
