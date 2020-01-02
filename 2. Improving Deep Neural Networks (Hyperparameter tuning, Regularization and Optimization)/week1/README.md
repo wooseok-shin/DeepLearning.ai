@@ -131,3 +131,18 @@ a3 = a3 / keep_prob
 	- 즉, 두 가지가 서로 Trade off하므로 최적의 조건을 찾지 못할 수 있다.
 
 
+  
+  
+## Normalizing inputs
+
+- input으로 어떤 두 변수 x1, x2가 있을 때 x1의 값의 범위는 [1, 10]이고 x2 값의 범위는 [1, 1000]이라고 하면  
+- 비용함수가 아래의 왼쪽 그림과 같이 가늘고 긴 모양의 형태를 가지게 된다. 이는 최적화에 오랜 시간이 걸리게 된다.  
+
+![Normalize](https://user-images.githubusercontent.com/46666862/71672539-a2197b00-2db9-11ea-9801-ccc8a528f34c.PNG)
+
+- 따라서, 각 변수의 Training set을 평균이 0, 그리고 분산을 1로 만들어주게 되면 오른쪽 그림과 같이 둥글고 최적화가 잘 되는 모습이 된다.  
+
+- Normalize 방법:  ![CodeCogsEqn](https://user-images.githubusercontent.com/46666862/71672945-a8f4bd80-2dba-11ea-8ec1-8f902ba19116.gif)  
+
+- cf) Test set을 정규화할 때는 Train set을 정규화할 때 사용했던 평균과 분산을 사용해야 한다.  
+
