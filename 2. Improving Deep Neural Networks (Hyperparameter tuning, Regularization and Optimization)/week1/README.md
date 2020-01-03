@@ -186,10 +186,15 @@ a3 = a3 / keep_prob
 따라서 이를 해결하기 위하여 W의 분산  ![CodeCogsEqn (1)](https://user-images.githubusercontent.com/46666862/71713993-5dd8ba00-2e4f-11ea-97fe-efa73a0fc7e5.gif)  으로 설정하여 해결할 수 있다.  
 - 이를 Xavier 초기값이라고 부른다  
 
-- ReLU의 경우는  ![CodeCogsEqn (2)](https://user-images.githubusercontent.com/46666862/71714011-777a0180-2e4f-11ea-9d8b-a7832ffc9875.gif) 로 설정하는 것이 좋다.  
+ReLU의 경우는  ![CodeCogsEqn (2)](https://user-images.githubusercontent.com/46666862/71714011-777a0180-2e4f-11ea-9d8b-a7832ffc9875.gif) 로 설정하는 것이 좋다.   
+- 이를 He 초기값이라고 부른다  
 
 ```python
-W_layer2 = np.random.randn(shape) * np.sqrt(1/n_layer1)
+# 구현
+
+W_layer2 = np.random.randn(shape) * np.sqrt(1/n_layer1) # Xavier
+
+W_layer2 = np.random.randn(shape) * np.sqrt(2/n_layer1) # He
 ```
 
 - 이를 통해 Gradient가 빠르게 Exploding 하거나 Vanishing하는 문제를 해결할 수 있다.  
