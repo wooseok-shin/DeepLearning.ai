@@ -40,3 +40,9 @@ Week1: [Practical aspects of Deep Learning](https://github.com/wooseok-shin/Deep
 * Dropout Regularization
 * Understanding Dropout
 * Other regularization methods
+  
+* Normalizing Inputs
+* Vanishing/Exploding Gradients
+* Weight Initialize for Deep Networks
+* Numerical Approximations of Gradients
+* Gradient Checking
