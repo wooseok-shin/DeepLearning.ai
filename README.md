@@ -40,9 +40,20 @@ Week1: [Practical aspects of Deep Learning](https://github.com/wooseok-shin/Deep
 * Dropout Regularization
 * Understanding Dropout
 * Other regularization methods
-  
 * Normalizing Inputs
 * Vanishing/Exploding Gradients
 * Weight Initialize for Deep Networks
 * Numerical Approximations of Gradients
 * Gradient Checking
+
+  
+Week2: [Optimization algorithms]
+* Mini Batch Gradient Descent
+* Understanding Mini Batch Gradient Descent
+* Exponentially Weight Average
+* Bias Correction of Exponentially Weight Average
+* Gradient Descent with Momentum
+* RMSprop
+* Adam Optimization Algorithm
+* Learning Rate Decay
+* The problem of Local Optima
