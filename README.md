@@ -47,7 +47,7 @@ Week1: [Practical aspects of Deep Learning](https://github.com/wooseok-shin/Deep
 * Gradient Checking
 
   
-Week2: [Optimization algorithms]
+Week2: [Optimization algorithms](https://github.com/wooseok-shin/DeepLearning.ai/tree/master/2.%20Improving%20Deep%20Neural%20Networks%20(Hyperparameter%20tuning%2C%20Regularization%20and%20Optimization)/week2)
 * Mini Batch Gradient Descent
 * Understanding Mini Batch Gradient Descent
 * Exponentially Weight Average
