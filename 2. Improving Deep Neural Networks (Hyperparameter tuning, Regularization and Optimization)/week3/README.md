@@ -97,7 +97,7 @@ cf) ![m개샘플 ZA](https://user-images.githubusercontent.com/46666862/71554972
   
 ## Why Does Batch Norm Work?
 
-직관 1) 이전 층의 가중치의 영향을 덜 받게된다.
+직관 1) 이전 층의 가중치의 영향을 덜 받게된다.  
 예를 들어 Traning set엔 검정 고양이 사진만 존재, Test set에는 색이있는 고양이들이 있다고 하자.   
 이렇게 Traning과 Test의 분포가 달라지는 문제를 **Covariate Shift**라고 한다.   
 따라서 이럴 경우에는 색이있는 고양이들의 데이터로 다시 학습을 시켜야 한다.  
@@ -138,3 +138,31 @@ cf) 노이즈 추가 --> 이후의 노드가 앞의 하나의 노드에 너무 �
   
   
   
+## Softmax Regression
+
+- 최종 출력이 이진 분류가 아닌 3개 이상의 클래스를 분류할 경우 Softmax를 사용한다.  
+- 마지막 층의 출력값이 주어졌을 때 해당 클래스에 속할 확률을 Softmax 층을 통해서 구할 수 있다.  
+- 마지막 선형 출력값 z를 다음과 같은 식에 대입하여 마지막 값을 구한다.  ![softmax](https://user-images.githubusercontent.com/46666862/72063003-3f296600-331c-11ea-9b1d-8e7e38eec6b0.gif)  
+
+Example)
+	1. ![Z, e^Z](https://user-images.githubusercontent.com/46666862/72063463-2bcaca80-331d-11ea-9311-caa63aa402a0.gif)  
+	2. ![soft aL](https://user-images.githubusercontent.com/46666862/72063461-2b323400-331d-11ea-87c1-7e3fb6cbdc22.gif)  
+	
+위의 결과로 0.842 = 84.2%의 확률로 0번째 클래스임을 볼 수 있다.  
+
+  
+  
+  
+## Training Softmax Classifier
+
+cf) Hardmax : 가장 큰 값을 1로, 나머지는 0으로 바꾼다. Softmax와 반대 개념
+
+- Softmax층을 구현할 때 Class가 2개이면  Logistic Regression과 같다.
+	- Softmax는 Logistic Regression을 일반화한 것과 같다.  
+	
+- 학습을 위한 Loss Function은 다음과 같다.  
+	- ![crossentropy](https://user-images.githubusercontent.com/46666862/72063939-27eb7800-331e-11ea-8228-1087fdbba66d.gif)  
+
+- Softmax의 Loss Function의 backprop 값은 다음과 같다.  
+	- ![backprop crossentropy](https://user-images.githubusercontent.com/46666862/72063938-2752e180-331e-11ea-92a7-7990f80a19df.gif)  
+	
