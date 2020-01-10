@@ -57,3 +57,14 @@ Week2: [Optimization algorithms](https://github.com/wooseok-shin/DeepLearning.ai
 * Adam Optimization Algorithm
 * Learning Rate Decay
 * The problem of Local Optima
+  
+  
+Week3: [Hyperparameter tuning, Batch Normalization](https://github.com/wooseok-shin/DeepLearning.ai/tree/master/2.%20Improving%20Deep%20Neural%20Networks%20(Hyperparameter%20tuning%2C%20Regularization%20and%20Optimization)/week3)  
+* Tuning Process
+* Using an Appropriate Scale
+* Normalizing Activations in a Network
+* Fitting Batch Norm into Neural Networks
+* Why Does Batch Norm Work?
+* Batch Norm at Test Time
+* Softmax Regression
+* Training Softmax Classifier
