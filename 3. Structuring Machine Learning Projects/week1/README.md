@@ -192,3 +192,16 @@ A가 B보다 성능이 좋다. 하지만 실제 서비스를 할 때 A가 잘못
 	- Regularization(L1, L2, Dropout, Data Augmentation)
 	- Better NN Architecture
 	 -HyperParameters Search
+	 
+	 
+	 
+	 
+## Assignment 오답
+- Dev와 Test set은 같은 분포로부터 와야 하지만 Train Set에는 Dev와 Test의 분포와 다른 데이터를 넣어도 괜찮다.
+	- 예를 들어, Train,Dev,Test set에 모두 CCTV 사진 dataset에 Train으로 휴대폰 사진을 추가해도 괜찮다.  
+
+- Bayes Error(Human Error)에 대한 정보 없이 Training Set Error와 Dev Set Error만 있으면 무언가를 선택할 정보가 충분하지 않다.  
+
+- 기존에 잘 작동하던 모델(Bird Detection)에 새로운 데이터(다른 종류의 새)가 들어오면 가장 먼저 해야할 것
+	- 새로운 데이터를 고려하여 새로운 평가 Metric(New Dev, New Test set을 사용하여)을 정의하고 평가  
+	
