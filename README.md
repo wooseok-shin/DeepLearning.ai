@@ -68,3 +68,18 @@ Week3: [Hyperparameter tuning, Batch Normalization](https://github.com/wooseok-s
 * Batch Norm at Test Time
 * Softmax Regression
 * Training Softmax Classifier
+
+
+## Course 3. Structuring Machine Learing Project
+
+Week1: [ML Strategy(1)](https://github.com/wooseok-shin/DeepLearning.ai/tree/master/3.%20Structuring%20Machine%20Learning%20Projects/week1)
+* Orthonalization
+* Single Number Evaluation Metric
+* Satisficing and Optimizing Metrics
+* Train/Dev/Test Set Distribusions
+* Size of Dev/Test Sets
+* When to change Dev/Test sets and Metrics?
+* Why Human-Level Performance?
+* Avoidable Bias(회피 가능 편향)
+* Surpassing Human-Level Performance
+* Improving Model Performance
