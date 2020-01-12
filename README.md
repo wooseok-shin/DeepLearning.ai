@@ -83,3 +83,8 @@ Week1: [ML Strategy(1)](https://github.com/wooseok-shin/DeepLearning.ai/tree/mas
 * Avoidable Bias(회피 가능 편향)
 * Surpassing Human-Level Performance
 * Improving Model Performance
+
+
+Week2: [ML Strategy(2)](https://github.com/wooseok-shin/DeepLearning.ai/tree/master/3.%20Structuring%20Machine%20Learning%20Projects/week2)
+*Carrying Out Error Analysis
+*Cleaning Up Incorrectly Labelled Data
