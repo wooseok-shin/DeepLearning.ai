@@ -34,7 +34,7 @@ Week4: [Deep Neural Networks](https://github.com/wooseok-shin/DeepLearning.ai/tr
 Week1: [Practical aspects of Deep Learning](https://github.com/wooseok-shin/DeepLearning.ai/tree/master/2.%20Improving%20Deep%20Neural%20Networks%20(Hyperparameter%20tuning%2C%20Regularization%20and%20Optimization)/week1)
 * Train/Dev/Test sets
 * Bias/Variance
-* Basic Recipe for Machine Learing
+* Basic Recipe for Machine Learning
 * Regularization(L1,L2)
 * Why Regularization reduces overfitting?
 * Dropout Regularization
@@ -70,7 +70,7 @@ Week3: [Hyperparameter tuning, Batch Normalization](https://github.com/wooseok-s
 * Training Softmax Classifier
 
 
-## Course 3. Structuring Machine Learing Project
+## Course 3. Structuring Machine Learning Project
 
 Week1: [ML Strategy(1)](https://github.com/wooseok-shin/DeepLearning.ai/tree/master/3.%20Structuring%20Machine%20Learning%20Projects/week1)
 * Orthonalization
@@ -86,5 +86,12 @@ Week1: [ML Strategy(1)](https://github.com/wooseok-shin/DeepLearning.ai/tree/mas
 
 
 Week2: [ML Strategy(2)](https://github.com/wooseok-shin/DeepLearning.ai/tree/master/3.%20Structuring%20Machine%20Learning%20Projects/week2)
-*Carrying Out Error Analysis
-*Cleaning Up Incorrectly Labelled Data
+* Carrying Out Error Analysis
+* Cleaning Up Incorrectly Labelled Data
+* Training and Testing on Different Distribusions
+* Bias and Variance with Mismatched Data Distribusions
+* Addressing Data Mismatch
+* Transfer Learning
+* Multi-task Learning
+* What is end-to-end Deep Learning
+* Whether to use end-to-end Deep Learning
