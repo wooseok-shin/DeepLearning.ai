@@ -95,3 +95,20 @@ Week2: [ML Strategy(2)](https://github.com/wooseok-shin/DeepLearning.ai/tree/mas
 * Multi-task Learning
 * What is end-to-end Deep Learning
 * Whether to use end-to-end Deep Learning
+
+
+
+## Course4. Convolution Neural Networks
+
+Week1: [Foundations of Convolutional Neural Networks](https://github.com/wooseok-shin/DeepLearning.ai/tree/master/4.%20Convolution%20Neural%20Networks/week1)
+* Computer Vision
+* Edge Detection Examples
+* More Edge Detection
+* Padding
+* Stride
+* Convolutions Over Volume
+* One layer of a Convolutional Net
+* Simple Convolutional Networks Example
+* Pooling Layers
+* Why Convolutions?
+
