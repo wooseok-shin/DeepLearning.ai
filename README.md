@@ -112,3 +112,15 @@ Week1: [Foundations of Convolutional Neural Networks](https://github.com/wooseok
 * Pooling Layers
 * Why Convolutions?
 
+Week2: [Deep Convolutional models(Case Studies)](https://github.com/wooseok-shin/DeepLearning.ai/tree/master/4.%20Convolution%20Neural%20Networks/week2)
+* Why Look at Case Studies?
+* Classic Networks (LeNet, AlexNet, VGG)
+* ResNets
+* Why ResNets Work?
+* Networks in Networks and 1x1 Convolutions
+* Inception Network Motivation
+* Inception Network
+* Transfer Learning
+* Data Augmentation
+* State of Computer Vision
+
