@@ -124,3 +124,14 @@ Week2: [Deep Convolutional models(Case Studies)](https://github.com/wooseok-shin
 * Data Augmentation
 * State of Computer Vision
 
+Week3: [Object Detection](https://github.com/wooseok-shin/DeepLearning.ai/tree/master/4.%20Convolution%20Neural%20Networks/week3)
+* Object Localization
+* Landmark Detection
+* Object Detection
+* Convolutional Implementation of Sliding Windows
+* Bounding Box Predictions
+* Intersection Over Union
+* Non-max Suppression
+* Anchor Boxes
+* YOLO Algorithm
+* Region Proposals
