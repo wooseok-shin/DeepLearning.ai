@@ -95,3 +95,65 @@
 ![siamese3](https://user-images.githubusercontent.com/46666862/73670664-fbdcd000-46ec-11ea-98fe-a0a8e3644483.PNG)
 
 - Training Set을 Triplet으로 만드는 대신에 위와 같이 한 쌍의 이미지로 만들어 같은 사람일 경우 Label을 1로, 다를 경우는 0으로 만들어 학습시킨다.
+
+
+
+## What is Neural Style Transfer?
+
+
+![neuralstyle](https://user-images.githubusercontent.com/46666862/74605573-a9e47300-510c-11ea-9bed-5a1d9d655964.PNG)
+
+- 위와 같이 기존 이미지(C)에 스타일 이미지(S)를 적용해 새로운 이미지(G)를 생성하는 것
+- 구현하기 위해 신경망의 얕거나 깊은 여러개의 층에서 추출된 특성을 살펴봐야한다.
+
+	
+## What are Deep ConvNets Learning?
+
+![convnet1](https://user-images.githubusercontent.com/46666862/74605828-e5803c80-510e-11ea-84b2-61e65c31f4ec.PNG)
+
+- 위와 같은 신경망 구조가 어떻게 동작하는지를 시각화 해보자
+	- 특정 층의 한 개의 Hidden Unit을 선택하고 해당 유닛의 활성화를 최대화하는 9개의 입력 이미지를 찾는다.
+	- 이를 토대로 시각화를 해보면 아래와 같이 층이 깊어질수록 이미지의 좀 더 큰 부분을 보게된다.
+![layers](https://user-images.githubusercontent.com/46666862/74605912-8111ad00-510f-11ea-80ba-4206b6c2fe7b.PNG)
+
+	
+- 먼저 첫 번째층의 하나의 Hidden Unit을 살펴보면 아래와 같이 왼쪽 위에서 오른쪽 아래로 향하는 모서리를 검출하는 것을 볼 수 있다.
+![hidden1](https://user-images.githubusercontent.com/46666862/74605915-8242da00-510f-11ea-9727-3f4f40a197b1.PNG)
+
+- 첫 번째층의 다른 Hidden Unit을 살펴보면 위의 사진과 반대로 오른쪽 위에서 왼쪽 아래로 향하는 모서리를 찾을 수 있다.
+![hidden2](https://user-images.githubusercontent.com/46666862/74605916-82db7080-510f-11ea-8ce1-8c5ae4c1be95.PNG)
+
+- 또 다른 Hidden Unit을 살펴보면 세로로 된 모서리와 주로 초록빛을 검출하는 것을 볼 수 있다.
+![hidden3](https://user-images.githubusercontent.com/46666862/74605917-82db7080-510f-11ea-8082-ab403b6e11c8.PNG)
+
+- 그래서 Layer1의 9개를 모아서 살펴보면 아래와 같이 작은 부분을 검출하는 것을 볼 수 있다.
+![layer1](https://user-images.githubusercontent.com/46666862/74606130-26795080-5111-11ea-8e93-26ab519d2c38.PNG)
+
+- 이후 Layer2에서는 좀 더 다양한 줄무늬나 특정 패턴을 검출하는 것을 볼 수 있다.
+![layer2](https://user-images.githubusercontent.com/46666862/74606131-2711e700-5111-11ea-9bd4-e778f2710b73.PNG)
+
+- Layer3에서는 더 복잡한 무늬나 자동차 바퀴, 사람 등을 검출 하는 것으로 보인다.
+![layer3](https://user-images.githubusercontent.com/46666862/74606132-2711e700-5111-11ea-87d3-913938517563.PNG)
+
+- Layer4에서는 비슷하게 생긴 강아지를 검출하거나 물이 있는 사진을 검출, 새나 동물의 다리를 검출하는 유닛들이 존재한다.
+![layer4](https://user-images.githubusercontent.com/46666862/74606133-27aa7d80-5111-11ea-8db8-a8caef7b5720.PNG)
+
+- Layer5에서는 새나 파충류의 눈, 어떤 특정 병들, 종류가 다른 강아지, 꽃, 키보드와 같이 작은 점들이 많이 모여있는 사진 등을 검출하는 것을 볼 수 있다.
+![layer5](https://user-images.githubusercontent.com/46666862/74606128-25482380-5111-11ea-8458-bfe0b99ac616.PNG)
+
+
+- 즉, 신경망에서 더 깊은 층으로 갈수록 히든유닛이 비교적 이미지의 큰 패턴을 파악하게 된다.
+
+
+## Cost Function
+
+- Neural Style Transfer의 Cost Function은 아래와 같다.
+![J(G)](https://user-images.githubusercontent.com/46666862/74606695-eb2d5080-5115-11ea-91de-360828d9355a.gif)
+	- 알파와 베타는 하이퍼 파라미터
+- J(C,G)는 Content Cost 즉, 생성되는 이미지와 Content 이미지의 차이를 나타낸다.
+- J(S,G)는 Style Cost 즉, 생성되는 이미지와 Style 이미지의 차이를 나타낸다.
+
+- 알고리즘은 작동 방식은 아래와 같다.
+	- 1.무작위 이미지(G)를 생성
+	- 2.Gradient Descent를 사용하여 J(G)를 최소화 시키고 Parameter 업데이트
+	
