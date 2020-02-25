@@ -175,3 +175,59 @@
 	- L번째 층의 Content 활성화값과 생성된 Generate의 활성화값의 차이를 통해 비슷한 정도를 구한다.  
 	
 ![J_content](https://user-images.githubusercontent.com/46666862/74632048-d39ba980-51a1-11ea-9998-17ad8015c075.gif)
+
+
+
+## Style Cost Function
+
+![J(G)](https://user-images.githubusercontent.com/46666862/74606695-eb2d5080-5115-11ea-91de-360828d9355a.gif)
+
+- 오른쪽항인 Style Cost Function 계산방법을 알아보자.
+- 먼저 스타일이라는 것을 정의해야 하는데, 이는 **특정 L번째 층에서 서로 다른 채널의 활성값들간의 상관관계**라고 정의할 수 있다.
+
+![pairsytle](https://user-images.githubusercontent.com/46666862/75218405-8e98f800-57dd-11ea-9bcb-01f144bfc66f.png)
+
+- 예를들어, 5개의 채널이 있다고 하면 위 그림과 같이 먼저 빨간채널과 노란채널의 동일한 nH,nW 위치의 값들이 한 쌍을 이룬다. 
+
+![style1](https://user-images.githubusercontent.com/46666862/75218857-a02ecf80-57de-11ea-8ccd-ffb5924b1937.PNG)
+
+- 그 후 빨간채널이 위의 빨간색 박스처럼 세로 줄무늬를 탐지하는 채널, 노란채널이 노란색 박스처럼 주황빛을 탐지하는 채널이라고 하자.
+	- 빨간채널과 노란채널이 서로 상관관계가 높은 경우 어떤 이미지 조각이 세로 줄무늬를 가질 때 그 이미지 조각은 주황색을 가진다는 것을 의미한다.
+	- 서로 상관관계가 없는 경우 어떤 이미지 조각이 세로 줄무늬를 가질 때 그 이미지 조각은 주황색 색조를 띠지 않는다는 것을 의미한다.
+	
+- 이러한 **상관관계 정도**를 통해 이미지의 일부 텍스쳐 요소(세로선, 주황빛 등)들이 함께 나타나는지 아닌지를 측정할 수 있다.
+	- 이러한 상관관계 정도를 스타일의 측정으로 사용하여 생성 이미지의 스타일과 입력 이미지의 스타일의 유사도를 측정
+
+- 측정 요소인 상관관계 정도를 공식화 시켜보자.
+	- ![a(i,j,k)](https://user-images.githubusercontent.com/46666862/75219898-72975580-57e1-11ea-9d79-98b2870c41c9.gif) 를 (i, j, k) 위치의 활성화 값이라고 정의하자 (각각 H, W, C의 위치)
+	- 이후, ![상관관계행렬](https://user-images.githubusercontent.com/46666862/75219900-732fec00-57e1-11ea-901b-14e712291af6.gif) 는 L층에서 스타일 이미지에 대한 상관관계 행렬을 계산한 것이다. 이를 스타일 행렬이라고 정의 (높이와 너비가 각각 채널의 수인 행렬)
+	- 입력이미지 중 스타일 이미지에 대한 k채널과 k'(k프라임) 채널간의 상관관계 값은 다음과 같이 구할 수 있다. ![InputstyleCorrMat](https://user-images.githubusercontent.com/46666862/75220599-2220f780-57e3-11ea-96c4-bf11673ac43b.PNG)
+	- 그리고 생성 이미지에 대한 상관관계 값 역시 다음과 같이 구할 수 있다. ![styleCorrMat](https://user-images.githubusercontent.com/46666862/75220264-57791580-57e2-11ea-9e59-3a3185a1969b.PNG)
+	- 두 행렬은 선형대수학에서 그램 행렬이라고 부르는 것이다. 그리고 엄밀히 말하면 상관관계가 아닌 Unnormalize Cross Covariance이다. 왜냐하면 평균을 빼지 않고 곱하기만 하기 때문이다.
+	- 위 공식에서 a(i,j,k or k') 두 활성값이 모두 크다면 상관관계 행렬도 값이 커진다.
+
+- 스타일 이미지에 대한 상관관계 행렬과 생성 이미지에 대한 상관관계 행렬, 두 행렬을 가지고 L번째 층의 Style Cost Function을 구할 수 있다.
+- ![stylecostfunction](https://user-images.githubusercontent.com/46666862/75221843-21d62b80-57e6-11ea-91a4-a21cd86a96ab.PNG)
+
+- 최종적으로 모든 층에 대한 전체 Style Cost Function은 다음과 같다.
+	- ![stylecostf](https://user-images.githubusercontent.com/46666862/75221960-5fd34f80-57e6-11ea-82c1-76079a64dfec.PNG)
+	- 람다는 하이퍼파라미터이고, 스타일 비용 함수에 대한 가중치이다. 이는 신경망의 다른 층을 사용하는 것을 허락한다. 예를들면, 스타일을 계산할 때 낮은 레벨(모서리 감지같은 초반부 Layer)과 높은 레벨(후반부 Layer)의 상관관계를 모두 고려하도록 한다. 
+	
+
+## 1D and 3D Generalizations
+
+- 2D와 마찬가지로 1D나 3D 데이터에서도 같은 Convolution의 원리를 사용할 수 있다.
+
+- ![1D](https://user-images.githubusercontent.com/46666862/75223336-8f378b80-57e9-11ea-9fae-f6c945865655.PNG)
+- 위 그림과 같이 사람의 심전도 데이터 같은 경우 1차원으로 데이터가 구성된다. 이 때 필터역시 1차원으로 구성되어 Convolution을 할 수 있다.
+
+- CT 스캔과 같은 데이터는 3D 데이터에는 필터 역시 3D 필터를 사용하면 된다. (영화도 3D로 생각할 수 있다 --> 시간에 따른 각각의 이미지 조각들)
+
+
+
+
+## Quiz 오답
+
+- One Shot Learning도 학습시에는 한명당 10장 정도의 사진이 필요하다. (이후 새로운 사람을 판독할 때는 한장으로도 괜찮다.)
+- Neural Style Transfer는 Supervised Learning은 아니다. (특정 정답을 맞추는 것은 아니므로)
+- Triplet Loss: {f(A)-f(P)}^2 + 알파 < {f(A)-f(N)}^2 이 되도록
